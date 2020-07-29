@@ -1,0 +1,55 @@
+p1 = Project(
+    heading = 'Park Traversal',
+    short_description = 'Program to find the shortest path in the park between a given set of points',
+    long_description = 'A Python code to draw a path on an existing image that contains the 3D map of the Mendon Ponds park. In this project, the A* search algorithm has been used to get the shortest path through the points specified. The speed with which a person can traverse across different terrains in the park has been considered. This program takes care of the different seasons when calculating the shortest path.',
+    url = 'https://github.com/ravikiranjois1/personal-projects/tree/master/A-star%20search-%20Image%20Processing',
+    technology = 'Python, Pillow library, A* Search algorithm, Breadth First Search algorithm',
+    image = 'img/Mendon-Ponds-Park-Devils-Bathtub-autumn.jpg'
+)
+
+p1.save()
+
+p2 = Project(
+    heading = 'Yelp Dataset',
+    short_description = 'A project analysing the restaurant data in Yelp dataset',
+    long_description = 'The Yelp dataset is analysed to get a range of information about the restaurants in the United States. The data has been mined for most frequent itemsets and also discovered interesting association rules. The RDBMS used is PostgreSQL and the document based model used is MongoDB. The code is written in Python using the psycopg2 and the pymongo packages along with pandas library.',
+    url = 'https://github.com/ravikiranjois1/yelp-data',
+    technology = 'Python, PostgreSQL, MongoDB, psycopg2, pandas, pymongo, Apriori algorithm',
+    image = 'img/yelp-pic.jpg'
+)
+
+p2.save()
+
+p3 = Project(
+    heading = 'A Language Classifier',
+    short_description = 'A English-Dutch Language Classifier using Decision Trees and Adaboost',
+    long_description = 'The project is developed using the Decision trees and Adaboost algorithms to classify the lines in a given file with English and Dutch words to their respective languages. The code is written completely in Python. The dataset is separately fed as training data or test data according to user's requirements. The user can enter the argument as to which algorithm has to be used for the classification of the language (Adaboost or Decision Trees). According to the the data entered and analysis done, the Adaboost does a better job in classifying the language accurately.'
+    url = 'https://github.com/ravikiranjois1/personal-projects/tree/master/Language_Classifier',
+    technology = 'Python, Decision Trees, Adaboost',
+    image = 'img/english-dutch.png'
+)
+
+p3.save()
+
+r1 = Resume(
+    resume_file = 'resume_pdf/rj_resume.pdf'
+)
+
+r1.save()
+
+h7 = Home(
+    header = 'Hey, I\'m Ravikiran Jois!',
+    tag = 'Student. Programmer. Aspiring Data Scientist',
+    description_1 = 'I am currently pursuing the Master of Science in Computer Science at Rochester Institute of Technology with a major focus on Data Science and Machine Learning.',
+    description_2 = 'Completing the Bachelor of Engineering in Bengaluru, Karnataka, I started working in Bengaluru at Cognizant Technology Solutions. I also worked at Hyderabad, India on a couple of projects for a span of 12 months.',
+    description_3 = 'This blog began as an exercise in improving my Django skills. A friend gave me a great advice to improve the skill as it is a highly sought after one. I love coding in Python. Apart from my interests in Data Science, I am extremely eager to learn more about computer science and software engineering and develop significant skills in these topics.',
+    description_4 = 'In my spare time, I watch a ton of films and listen to a bunch of music, both pertaining to all kinds of genres on the planet (As much as possible :) ). I have a flair for Indian Classical Music and World Music as it defines a peaceful mind to me. I am also a big fan of cars and motorsport and I love reading and learning about them.',
+    contact_heading = 'Please feel free to contact me via the following channels:',
+    git = 'Github: https://github.com/ravikiranjois1?tab=repositories',
+    linkedin = 'LinkedIn: https://www.linkedin.com/in/ravikiran-jois',
+    email = 'E-mail: ravikiranjois@gmail.com or ry4287@rit.edu',
+    fb = 'Facebook: https://www.facebook.com/ravikiran.jois',
+    background_img = 'img/homepage.jpg'
+)
+
+h7.save()

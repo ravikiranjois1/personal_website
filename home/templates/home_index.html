@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_content %}
+<!--    <h1>Home</h1>-->
+    <div class="row">
+        {% for ho in home %}
+<!--            <div class="col-md-12">-->
+            <figure class="row_container">
+                <img src="{% static ho.background_img %}" alt="" width="120%">
+            </figure>
+<!--            </div>-->
+            <div class="col-md-6"></div>
+            <div class="col-md-6">
+                <h5>About the Project</h5>
+                <p>{{ho.header}}</p>
+                <br>
+                <h5>Technology used:</h5>
+                <p>{{ho.description_1}}</p>
+                <br>
+                <p>{{ho.contact_heading}}</p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
