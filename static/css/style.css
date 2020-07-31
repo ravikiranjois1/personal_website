@@ -165,7 +165,7 @@ h1, h2, h3, h4, h5, h6 {
   border-top: 1px solid #ced4da !important; }
 
 .site-footer {
-  padding-top: 17rem;
+  padding-top: 3rem;
   padding-bottom: 4rem;
   background: #333333; }
   .site-footer p {
@@ -553,7 +553,7 @@ h1, h2, h3, h4, h5, h6 {
     min-height: 600px;
     height: calc(80vh); }
   .site-blocks-cover h1 {
-    font-size: 8rem;
+    font-size: 4rem;
     font-weight: 900;
     line-height: 1; }
     @media (max-width: 991.98px) {

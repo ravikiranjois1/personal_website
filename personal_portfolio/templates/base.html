@@ -9,7 +9,7 @@
         <meta name="keywords" content="">
         <meta name="author" content="Free-Template.co">
 <!--        CSS Files-->
-        <link rel="shortcut icon" href="ftco-32x32.png">
+<!--        <link rel="shortcut icon" href="ftco-32x32.png">-->
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="{% static 'fonts/icomoon/style.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
@@ -24,13 +24,21 @@
     </head>
     <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300" data-aos-easing="slide" data-aos-duration="800" data-aos-delay="0">
         <div class="site-wrap">
+            <div class="site-mobile-menu site-navbar-target">
+              <div class="site-mobile-menu-header">
+                <div class="site-mobile-menu-close mt-3">
+                  <span class="icon-close2 js-menu-toggle"></span>
+                </div>
+              </div>
+              <div class="site-mobile-menu-body"></div>
+            </div> <!-- .site-mobile-menu -->
             <div class="site-navbar-wrap">
 <!--              Navigation Bar-->
               <div id="sticky-wrapper" class="sticky-wrapper" style="height: 74.5938px;"><div class="site-navbar site-navbar-target js-sticky-header" style="">
             <div class="container">
               <div class="row align-items-center">
                 <div class="col-6 col-md-4">
-                  <h1 class="my-0 site-logo"><a href="index.html">Ravikiran Jois<span class="text-primary">.</span> </a></h1>
+                  <h1 class="my-0 site-logo"><a href="{% url 'home_index' %}">Ravikiran Jois<span class="text-primary">.</span> </a></h1>
                 </div>
                 <div class="col-6 col-md-8">
                   <nav class="site-navigation text-right" role="navigation">
@@ -41,25 +49,32 @@
                       </a></div>
 
                       <ul class="site-menu main-menu js-clone-nav d-none d-lg-none">
-                        <li><a href="#home-section" class="nav-link active">Home</a></li>
-                        <li><a href="#what-we-do-section" class="nav-link">Projects</a></li>
-                        <li><a href="#about-section" class="nav-link">About Me</a></li>
-                        <li><a href="#portfolio-section" class="nav-link">Resume</a></li>
-                        <li><a href="#studio-section" class="nav-link">Github</a></li>
-                        <li><a href="#contact-section" class="nav-link">LinkedIn</a></li>
+                        <li><a href="{% url 'home_index' %}" class="nav-link active">Home</a></li>
+                        <li><a href="{% url 'project_index' %}" class="nav-link">Projects</a></li>
+<!--                        <li><a href="#about-section" class="nav-link">About Me</a></li>-->
+                        <li><a href="{% url 'resume_index' %}" class="nav-link">Resume</a></li>
+                        <li><a href="https://github.com/ravikiranjois1?tab=repositories" class="nav-link" target="_blank">Github</a></li>
+                        <li><a href="https://www.linkedin.com/in/ravikiran-jois/" class="nav-link" target="_blank">LinkedIn</a></li>
                       </ul>
                     </div>
                   </nav>
                 </div>
               </div>
             </div>
-          </div></di
-<!--                  Page Content-->
-                  <div class="container">
-                    {% block page_content %}
-                    {% endblock %}
-                  </div>
+          </div>
               </div>
+
+          </div>
+            <!--                  Page Content-->
+          <div class="container">
+            {% block page_content %}
+            {% endblock %}
+          </div>
+          <div class="row mb-5">
+              <div class="col-12">
+
+              </div>
+            </div>
 <!--            Page Footer-->
             <footer class="site-footer">
                   <div class="container">
@@ -67,8 +82,8 @@
                       <div class="col-lg-4 mb-5 mb-lg-0">
                         <div class="row mb-5">
                           <div class="col-12">
-                            <h3 class="footer-heading mb-4">About Us</h3>
-                            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+                              <h3 class="footer-heading mb-4">About the website</h3>
+                              <p>This website has been designed using Django. <br/>I wanted to learn Django since a long time and finally, this website gave me an opportunity to look into it!</p>
                           </div>
                         </div>
 
@@ -77,16 +92,16 @@
                       </div>
                       <div class="col-lg-3 ml-auto">
 
-                        <div class="row mb-5">
+                        <div class="row mb-1">
                           <div class="col-md-12">
                             <h3 class="footer-heading mb-4">Navigation</h3>
                           </div>
                           <div class="col-md-6 col-lg-6">
                             <ul class="list-unstyled">
-                              <li><a href="#home-section" class="smoothscroll">Home</a></li>
-                              <li><a href="#what-we-do-section" class="smoothscroll">What We Do</a></li>
+                              <li><a href="{% url 'home_index' %}" class="smoothscroll">Home</a></li>
+                              <li><a href="{% url 'project_index' %}" class="smoothscroll">Projects</a></li>
                               <li><a href="#about-section" class="smoothscroll">About Us</a></li>
-                              <li><a href="#team-section" class="smoothscroll">Team</a></li>
+                              <li><a href="{% url 'resume_index' %}" class="smoothscroll">Resume</a></li>
                             </ul>
                           </div>
 
@@ -95,43 +110,17 @@
                       </div>
 
 
-                      <div class="col-lg-4 mb-5 mb-lg-0">
-
-                        <div class="mb-5">
-                          <h3 class="footer-heading mb-2">Subscribe Newsletter</h3>
-                          <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-
-                          <form method="post" class="form-subscribe">
-                            <div class="form-group mb-3">
-                              <input type="text" class="form-control border-white text-white bg-transparent" placeholder="Enter full name" aria-label="Enter Email" aria-describedby="button-addon2">
-                            </div>
-                            <div class="form-group mb-3">
-                              <input type="text" class="form-control border-white text-white bg-transparent" placeholder="Enter email" aria-label="Enter Email" aria-describedby="button-addon2">
-                            </div>
-                            <div class="form-group">
-                              <button class="btn btn-primary px-5" type="submit">Subscribe</button>
-                            </div>
-                          </form>
-
-                        </div>
-
-
-
-
-                      </div>
-
                     </div>
-                    <div class="row pt-5 mt-5 text-center">
+                    <div class="row text-center">
                       <div class="col-md-12">
                         <div class="mb-4">
-                              <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
-                              <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
-                              <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
-                              <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
+                              <a href="https://www.facebook.com/ravikiran.jois" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
+<!--                              <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>-->
+                              <a href="https://www.instagram.com/ypravikiranjois/" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
+                              <a href="https://www.linkedin.com/in/ravikiran-jois" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
                             </div>
                         <p>
-                          <!-- Link back to Free-Template.co can't be removed. Template is licensed under CC BY 3.0. -->
-                      <small class="block">© 2019 <strong class="text-white">Glint Studio</strong> Free Template. All Rights Reserved. <br> Design by <a href="https://free-template.co/" target="_blank">Free-Template.co</a></small>
+                      <small class="block"> HTML/CSS/JS Design by <a href="https://free-template.co/" target="_blank">Free-Template.co</a></small>
                       </p>
                       </div>
 
@@ -141,17 +130,16 @@
             </div>
         </div>
 <!--  JavaScript Files-->
-  <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
-  <script src="{% static 'js/popper.min.js' %}"></script>
-  <script src="{% static 'js/bootstrap.min.js' %}"></script>
-  <script src="{% static 'js/owl.carousel.min.js' %}"></script>
-  <script src="{% static 'js/aos.js' %}"></script>
-  <script src="{% static 'js/jquery.sticky.js' %}"></script>
-  <script src="{% static 'js/stickyfill.min.js' %}"></script>
-  <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
-  <script src="{% static 'js/isotope.pkgd.min.js"></script>
-
-  <script src="{% static 'js/jquery.fancybox.min.js' %}"></script>
-  <script src="{% static 'js/main.js' %}"></script>
+      <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+      <script src="{% static 'js/popper.min.js' %}"></script>
+      <script src="{% static 'js/bootstrap.min.js' %}"></script>
+      <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+      <script src="{% static 'js/aos.js' %}"></script>
+      <script src="{% static 'js/jquery.sticky.js' %}"></script>
+      <script src="{% static 'js/stickyfill.min.js' %}"></script>
+      <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+      <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+      <script src="{% static 'js/jquery.fancybox.min.js' %}"></script>
+      <script src="{% static 'js/main.js' %}"></script>
     </body>
 </html>

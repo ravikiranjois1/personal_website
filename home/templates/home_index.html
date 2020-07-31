@@ -2,24 +2,42 @@
 {% load static %}
 
 {% block page_content %}
-<!--    <h1>Home</h1>-->
-    <div class="row">
-        {% for ho in home %}
-<!--            <div class="col-md-12">-->
-            <figure class="row_container">
-                <img src="{% static ho.background_img %}" alt="" width="120%">
-            </figure>
-<!--            </div>-->
-            <div class="col-md-6"></div>
-            <div class="col-md-6">
-                <h5>About the Project</h5>
-                <p>{{ho.header}}</p>
-                <br>
-                <h5>Technology used:</h5>
-                <p>{{ho.description_1}}</p>
-                <br>
-                <p>{{ho.contact_heading}}</p>
+<div class="site-blocks-cover" id="home-section">
+    {% for ho in home %}
+      <div class="img-wrap">
+        <div class="owl-carousel slide-one-item hero-slider">
+          <div class="slide">
+            <img src="{% static ho.background_1 %}" alt="Wayanad">
+          </div>
+          <div class="slide">
+            <img src="{% static ho.background_2 %}" alt="Hulikal">
+          </div>
+          <div class="slide">
+            <img src="{% static ho.background_3 %}" alt="Hassan">
+          </div>
+          <div class="slide">
+            <img src="{% static ho.background_4 %}" alt="Geneva">
+          </div>
+          <div class="slide">
+            <img src="{% static ho.background_5 %}" alt="Rochester">
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 ml-auto align-self-center">
+            <div class="intro">
+              <div class="heading">
+                <h1>{{ ho.header }}</h1>
+              </div>
+              <div class="text">
+                <p class="sub-text mb-5">{{ ho.tag }}</p>
+<!--                <p><a href="https://free-template.co/" target="_blank" class="btn btn-outline-primary btn-md">Start a project</a></p>-->
+              </div>
             </div>
-        {% endfor %}
-    </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+    </div> <!-- END .site-blocks-cover -->
 {% endblock %}
