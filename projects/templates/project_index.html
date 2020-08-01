@@ -2,22 +2,32 @@
 {% load static %}
 
 {% block page_content %}
-<h1>Projects</h1>
-<div class="row">
-    {% for project in projects %}
-    <div class="col-md-4">
-        <div class="card mb-2">
-            <img class="card-img-top" src="{% static project.image %}">
-            <div class="card-body">
-                <h5 class="card-title">{{project.heading}}</h5>
-                <p class="card-text">{{project.short_description}}</p>
-                <a href="{% url 'project_detail' project.pk %}"
-                   class="btn btn-primary">
-                    Learn More
-                </a>
-            </div>
-        </div>
+
+<div class="site-section" id="what-we-do-section">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-lg-6 section-title">
+        <h2 class="title text-primary">My Projects</h2>
+      </div>
     </div>
-    {% endfor %}
+    <div class="row">
+      <div class="col-lg-10 ml-auto">
+        <div class="row">
+          {% for project in projects %}
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
+            <div class="service h-100">
+              <img class="card-img-top" src="{% static project.image %}">
+              <p></p>
+              <h3>{{project.heading}}</h3>
+              <p>{{project.short_description}}</p>
+              <p><a href="{% url 'project_detail' project.pk %}" class="readmore">Learn more</a></p>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
 {% endblock %}

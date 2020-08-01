@@ -2,19 +2,21 @@
 {% load static %}
 
 {% block page_content %}
-<h1>{{project.heading}}</h1>
-<div class="row">
-    <div class="col-md-6">
-        <img src="{% static project.image %}" alt="" width="100%">
+<div class="site-section" id="about-section">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6 mb-5">
+        <img src="{% static project.image %}" alt="Project Image" class="img-fluid">
+      </div>
+      <div class="col-lg-5 ml-auto section-title">
+        <span class="sub-title mb-2 d-block">About the project</span>
+        <h2 class="title text-primary mb-3">{{project.heading}}</h2>
+        <p class="mb-4">{{ project.long_description }}</p>
+        <span class="sub-title mb-2 d-block">Technologies Used</span>
+        <p class="mb-4">{{ project.technology }}</p>
+        <p><a href="{{ project.url }}" class="readmore"> <span>Click Here</span></a></p>
+      </div>
     </div>
-    <div class="col-md-6">
-        <h5>About the Project</h5>
-        <p>{{ project.long_description }}</p>
-        <br>
-        <h5>Technology used:</h5>
-        <p>{{ project.technology }}</p>
-        <br>
-        <p>Click <a href="{{ project.url }}">here</a> for code</p>
-    </div>
+  </div>
 </div>
 {% endblock %}
