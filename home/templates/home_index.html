@@ -39,5 +39,48 @@
         </div>
       </div>
     {% endfor %}
-    </div> <!-- END .site-blocks-cover -->
+</div> <!-- END .site-blocks-cover -->
+<div class="row md-4"></div>
+<div class="site-section" id="what-we-do-section">
+  {% for ho in home %}
+    <div class="container">
+        <div class="row mb-2">
+          <div class="col-lg-6 section-title">
+            <span class="sub-title mb-2 d-block">{{ho.contact_heading}}</span>
+<!--            <h2 class="title text-primary">We are talented people.</h2>-->
+          </div>
+        </div>
+        <div class="row no-gutters">
+<!--          <div>-->
+            <div class="col-lg-7 section-title">
+                <div class="pr-lg-5">
+    <!--              <h3>Jacob Spencer</h3>-->
+    <!--              <span class="mb-4 d-block">CEO, Co-Founder</span>-->
+                  <p>{{ho.description_1}}</p>
+                  <p>{{ho.description_2}}</p>
+                  <p>{{ho.description_4}}</p>
+                  <p class="d-flex align-items-center">
+                    <span class="mr-3 text-black">Contact me:</span>
+<!--                    <a href="tel:+1-585-957-4855" class="contact_phone pr-2"><span class="icon-phone"></span></a>-->
+<!--                    <a href="https://www.linkedin.com/in/ravikiran-jois" class="linkedin p-2"><span class="icon-linkedin"></span></a>-->
+<!--                    <a href="mailto:ravikiranjois@gmail.com" class="mail_outline p-2"><span class="icon-mail_outline"></span></a>-->
+<!--                    <a href="https://www.facebook.com/ravikiran.jois" class="facebook p-2"><span class="icon-facebook"></span></a>-->
+
+                    <a href="{{ho.phone}}" class="contact_phone pr-2"><span class="icon-phone"></span></a>
+                    <a href="{{ho.linkedin}}" class="linkedin p-2"><span class="icon-linkedin"></span></a>
+                    <a href="{{ho.email}}" class="mail_outline p-2"><span class="icon-mail_outline"></span></a>
+                    <a href="{{ho.fb}}" class="facebook p-2"><span class="icon-facebook"></span></a>
+                    <a href="{{ho.insta}}" class="instagram p-2"><span class="icon-instagram"></span></a>
+                  </p>
+                </div>
+              </div>
+              <div class="col-lg-5 mb-5 person">
+                <img src="{% static ho.profile_photo %}" alt="Ravikiran Jois" class="img-fluid mb-5 person_image">
+              </div>
+<!--            </div>-->
+        </div>
+
+          </div>
+  {% endfor %}
+  </div>
 {% endblock %}

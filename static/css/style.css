@@ -46,6 +46,10 @@ h1, h2, h3, h4, h5, h6 {
 .overflow-hidden {
   overflow: hidden; }
 
+.person_image {
+max-width: 60%;
+}
+
 .text-black {
   color: #000 !important; }
 
@@ -874,3 +878,5 @@ h1, h2, h3, h4, h5, h6 {
     /* Firefox 18- */
     color: #ccc;
     font-style: italic; }
+
+
